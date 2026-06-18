@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Senja - Kafe Modern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fcf8f2;
+            color: #332211;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation Berlogo Baru */
+        header {
+            background-color: #4a3525;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Desain Logo Premium di Kiri Atas */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #d4a373;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-text span {
+            color: #d4a373;
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Menu Navigasi di Kanan Atas */
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.8rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #d4a373;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1200') no-repeat center center/cover;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d4a373;
+            color: #fff;
+            padding: 0.7rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #b98453;
+        }
+
+        /* Main Content Wrapper */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: #d4a373;
+            margin: 0.5rem auto 0;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #e6dfd5;
+        }
+
+        .menu-info {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .menu-item h3 {
+            margin-bottom: 0.5rem;
+            color: #4a3525;
+        }
+
+        .menu-item p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .menu-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item .price {
+            color: #d4a373;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .btn-sm {
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+
+        /* Tombol Keranjang Bulat di Pojok Kanan Bawah */
+        .floating-cart {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4a3525;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.2s;
+            font-size: 1.6rem;
+        }
+
+        .floating-cart:hover {
+            transform: scale(1.1);
+            background-color: #d4a373;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            background-color: #ff4d4d;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Tampilan Checkout (Modal Popup) */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 101;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #eee;
+            padding: 0.7rem 0;
+        }
+
+        .total-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: right;
+            margin: 1.5rem 0;
+            color: #4a3525;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #4a3525;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo-container">
+            <div class="logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:22px; height:22px;">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" y1="2" x2="6" y2="4" />
+                    <line x1="10" y1="2" x2="10" y2="4" />
+                    <line x1="14" y1="2" x2="14" y2="4" />
+                </svg>
+            </div>
+            <div class="logo-text">Kopi<span>Senja</span></div>
+        </a>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="javascript:void(0)" onclick="bukaKeranjang()">Keranjang</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <h1>Sruput Ketenangan di Kopi Senja</h1>
+        <p>Silakan pilih menu kesukaanmu di bawah ini.</p>
+    </div>
+
+    <div class="container">
+        
+        <section id="menu">
+            <h2>Menu Andalan</h2>
+            <div class="menu-grid">
+                
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500" alt="Espresso" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p>Ekstrak kopi murni pilihan yang pekat, harum, dan bertenaga.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 18.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Espresso', 18000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500" alt="Kopi Susu Senja" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Kopi Susu Senja</h3>
+                        <p>Espresso dengan campuran susu segar dan legitnya gula aren asli.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 23.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Kopi Susu Senja', 23000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=500" alt="Matcha Latte" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Matcha Latte</h3>
+                        <p>Teh hijau Jepang autentik dipadu dengan susu yang begitu creamy.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 25.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Matcha Latte', 25000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" alt="Croissant" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Croissant</h3>
+                        <p>Pastry renyah kaya mentega, pendamping paling pas buat ngopi.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 20.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Croissant', 20000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <div class="floating-cart" onclick="bukaKeranjang()">
+        🛒
+        <span class="cart-badge" id="cart-count">0</span>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="tutupKeranjang()">&times;</span>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center; font-family: 'Playfair Display', serif;">Detail Pesanan Anda</h2>
+            
+            <div id="cart-items">
+                </div>
+            
+            <div class="total-price">Total: Rp <span id="total-harga">0</span></div>
+            <button class="btn" style="width: 100%;" onclick="checkoutPesanan()">Checkout via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kopi Senja. Dibuat dengan penuh rasa kafein.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(namaProduk, harga) {
+            let itemSama = cart.find(item => item.name === namaProduk);
+            
+            if (itemSama) {
+                itemSama.quantity += 1;
+            } else {
+                cart.push({ name: namaProduk, price: harga, quantity: 1 });
+            }
+            
+            updateCartCount();
+        }
+
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.innerText = totalItems;
+        }
+
+        function bukaKeranjang() {
+            const modal = document.getElementById('cartModal');
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalHargaContainer = document.getElementById('total-harga');
+
+            modal.style.display = 'flex';
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p style="text-align: center; color: #888; padding: 2rem 0;">Keranjang belanja masih kosong.</p>';
+                totalHargaContainer.innerText = '0';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = '';
+            let totalHarga = 0;
+
+            cart.forEach(item => {
+                let subTotal = item.price * item.quantity;
+                totalHarga += subTotal;
+
+                cartItemsContainer.innerHTML += `
+                    <div class="cart-item">
+                        <span><strong>${item.name}</strong> (x${item.quantity})</span>
+                        <span>Rp ${subTotal.toLocaleString('id-ID')}</span>
+                    </div>
+                `;
+            });
+
+            totalHargaContainer.innerText = totalHarga.toLocaleString('id-ID');
+        }
+
+        function tutupKeranjang() {
+            document.getElementById('cartModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('cartModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function checkoutPesanan() {
+            if (cart.length === 0) {
+                alert('Keranjang Anda kosong!');
+                return;
+            }
+
+            let pesan = "Halo Kopi Senja, saya mau pesan:\n\n";
+            let totalHarga = 0;
+            
+            cart.forEach(item => {
+                let subTotal = item.price * item.quantity;  
+                totalHarga += subTotal;
+                pesan += `- ${item.name} (x${item.quantity}) : Rp ${subTotal.toLocaleString('id-ID')}\n`;
+            });
+            
+            pesan += `\n*Total Akhir: Rp ${totalHarga.toLocaleString('id-ID')}*`;
+            
+            let urlWhatsApp = "https://wa.me/628123456789?text=" + encodeURIComponent(pesan);
+            
+            window.open(urlWhatsApp, '_blank');
+            cart = [];
+            updateCartCount();
+            tutupKeranjang();
+        }
+    </script>
+
+</body>
+</html>
