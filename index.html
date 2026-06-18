@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kopi Senja - Kafe Modern</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo-container">
+            <div class="logo-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px; height:20px;">
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" y1="2" x2="6" y2="4" />
+                    <line x1="10" y1="2" x2="10" y2="4" />
+                    <line x1="14" y1="2" x2="14" y2="4" />
+                </svg>
+            </div>
+            <div class="logo-text">Kopi<span>Senja</span></div>
+        </a>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="javascript:void(0)" onclick="bukaKeranjang()">Keranjang</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <h1>Sruput Ketenangan</h1>
+        <p>Silakan pilih menu kesukaanmu di bawah ini.</p>
+    </div>
+
+    <div class="container">
+        
+        <section id="menu">
+            <h2>Menu Andalan</h2>
+            <div class="menu-grid">
+                
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=500" alt="Espresso" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Espresso</h3>
+                        <p>Ekstrak kopi murni pilihan yang pekat, harum, dan bertenaga.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 18.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Espresso', 18000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500" alt="Kopi Susu Senja" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Kopi Susu Senja</h3>
+                        <p>Espresso dengan campuran susu segar dan legitnya gula aren asli.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 23.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Kopi Susu Senja', 23000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?q=80&w=500" alt="Matcha Latte" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Matcha Latte</h3>
+                        <p>Teh hijau Jepang autentik dipadu dengan susu yang begitu creamy.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 25.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Matcha Latte', 25000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=500" alt="Croissant" class="menu-img">
+                    <div class="menu-info">
+                        <h3>Croissant</h3>
+                        <p>Pastry renyah kaya mentega, pendamping paling pas buat ngopi.</p>
+                        <div class="menu-footer">
+                            <span class="price">Rp 20.000</span>
+                            <button class="btn btn-sm" onclick="addToCart('Croissant', 20000)">+ Tambah</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <div class="floating-cart" onclick="bukaKeranjang()">
+        🛒
+        <span class="cart-badge" id="cart-count">0</span>
+    </div>
+
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="tutupKeranjang()">&times;</span>
+            <h2 class="modal-title">Detail Pesanan</h2>
+            
+            <div id="cart-items"></div>
+            
+            <div class="modal-footer-section">
+                <div class="total-price">Total: Rp <span id="total-harga">0</span></div>
+                <button class="btn btn-checkout" onclick="checkoutPesanan()">Checkout via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kopi Senja. Dibuat dengan penuh rasa kafein.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
