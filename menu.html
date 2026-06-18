@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Kopi Senja</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="index.html#home" class="logo-container">
+            <div class="logo-text">KOPI<span>SENJA</span></div>
+        </a>
+        <nav class="nav-links">
+            <a href="menu.html" class="active">Menu</a>
+            <a href="index.html#gallery">Galeri</a>
+            <a href="index.html#about">Tentang</a>
+            <a href="index.html#contact">Kontak</a>
+        </nav>
+    </header>
+
+    <div class="container page-menu-layout">
+        
+        <main class="menu-content-area">
+            <section class="section-padding" style="padding-top: 1rem;">
+                <h1 class="section-title animate-on-scroll" style="text-align: left;">Daftar Menu</h1>
+                <p class="section-subtitle animate-on-scroll" style="text-align: left; margin-bottom: 1.2rem;">Pilih menu favorit Anda langsung dari ponsel.</p>
+                
+                <div class="filter-container animate-on-scroll">
+                    <button class="filter-btn active" onclick="filterMenu('all', this)">✨ Semua</button>
+                    <button class="filter-btn" onclick="filterMenu('kopi', this)">☕ Kopi</button>
+                    <button class="filter-btn" onclick="filterMenu('non-kopi', this)">🍹 Non-Kopi</button>
+                    <button class="filter-btn" onclick="filterMenu('cemilan', this)">🥐 Camilan</button>
+                </div>
+                
+                <div class="menu-grid">
+                    <div class="menu-card animate-on-scroll" data-category="kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/1060/400/300" alt="Espresso" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Espresso</h3>
+                            <p class="menu-desc">Ekstrak kopi murni yang pekat dan harum.</p>
+                            <span class="price">Rp 18.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Espresso', 18000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="menu-card animate-on-scroll" data-category="kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/755/400/300" alt="Cappuccino" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Cappuccino</h3>
+                            <p class="menu-desc">Keseimbangan espresso, susu hangat, dan busa tebal.</p>
+                            <span class="price">Rp 24.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Cappuccino', 24000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="menu-card animate-on-scroll" data-category="kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/634/400/300" alt="Latte" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Caffè Latte</h3>
+                            <p class="menu-desc">Espresso lembut berpadu dengan susu segar creamy.</p>
+                            <span class="price">Rp 25.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Caffè Latte', 25000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="menu-card animate-on-scroll" data-category="kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/431/400/300" alt="Americano" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Americano</h3>
+                            <p class="menu-desc">Espresso kaya rasa dengan tambahan air panas segar.</p>
+                            <span class="price">Rp 20.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Americano', 20000)">+ Keranjang</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-card animate-on-scroll" data-category="non-kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/493/400/300" alt="Matcha" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Premium Matcha</h3>
+                            <p class="menu-desc">Teh hijau Jepang autentik yang creamy dan kaya rasa.</p>
+                            <span class="price">Rp 26.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Premium Matcha', 26000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="menu-card animate-on-scroll" data-category="non-kopi">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/429/400/300" alt="Chocolate" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Dark Chocolate</h3>
+                            <p class="menu-desc">Cokelat pekat pilihan yang disajikan beludru halus.</p>
+                            <span class="price">Rp 23.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Dark Chocolate', 23000)">+ Keranjang</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-card animate-on-scroll" data-category="cemilan">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/1080/400/300" alt="Croissant" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Butter Croissant</h3>
+                            <p class="menu-desc">Pastry renyah klasik Prancis dengan aroma mentega murni.</p>
+                            <span class="price">Rp 22.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Butter Croissant', 22000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                    <div class="menu-card animate-on-scroll" data-category="cemilan">
+                        <div class="menu-img-container">
+                            <img src="https://picsum.photos/id/312/400/300" alt="Brownies" class="menu-img">
+                        </div>
+                        <div class="menu-info">
+                            <h3>Fudgy Brownies</h3>
+                            <p class="menu-desc">Kue cokelat panggang potong dengan tekstur padat dan lumer.</p>
+                            <span class="price">Rp 18.000</span>
+                            <button class="btn btn-add-cart" onclick="addToCart('Fudgy Brownies', 18000)">+ Keranjang</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar-cart" id="sidebar-cart-container">
+            <div class="cart-overlay" onclick="toggleMobileCart(false)"></div>
+            <div class="cart-box" id="cart-box-element">
+                <div class="cart-header-mobile">
+                    <h3>🛒 Keranjang Belanja</h3>
+                    <button class="close-cart-btn" onclick="toggleMobileCart(false)">✕</button>
+                </div>
+                <div id="cart-items-container">
+                    <p class="empty-cart-text">Keranjang masih kosong.</p>
+                </div>
+                <hr class="cart-hr">
+                <div class="cart-total-row">
+                    <span>Total:</span>
+                    <strong id="cart-total-price">Rp 0</strong>
+                </div>
+                <button class="btn btn-checkout" onclick="checkoutToWhatsApp()">Pesan via WhatsApp</button>
+            </div>
+        </aside>
+        
+    </div>
+
+    <div class="floating-cart-bar" id="floating-cart-bar" onclick="toggleMobileCart(true)">
+        <div class="floating-cart-info">
+            <span class="floating-badge" id="floating-cart-badge">0</span>
+            <span id="floating-cart-total">Rp 0</span>
+        </div>
+        <div class="floating-cart-action">Lihat Order ➔</div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kopi Senja. All Rights Reserved. | Premium Web App UMKM.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
